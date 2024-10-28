@@ -1,0 +1,21 @@
+name: workflow_name
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    run-on: ubuntu-latest
+
+    steps: 
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: run test
+        run: |
+          echo "start run test"
+          echo "current  SHA: $GITHUB_SHA"
+          echo "previous SHA: $ {{ github.event.before }}"
