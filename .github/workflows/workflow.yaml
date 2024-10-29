@@ -24,7 +24,7 @@ jobs:
           echo "-- 1 -- "
           git diff --name-only ${{ github.event.before }} $GITHUB_SHA
           echo "-- 2 -- "
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} $GITHUB_SHA)
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} $GITHUB_SHA -- learning)
           echo "-- 3 -- "
           echo "changed_files=$CHANGED_FILES" >> $GITHUB_ENV
           echo "-- 4 -- "
