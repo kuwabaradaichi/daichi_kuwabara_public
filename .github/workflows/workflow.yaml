@@ -19,6 +19,8 @@ jobs:
           echo "start run test"
           echo "current  SHA: $GITHUB_SHA"
           echo "previous SHA: ${{ github.event.before }}"
+          echo "-- 1 -- "
+          git diff --name-only ${{ github.event.before }} $GITHUB_SHA
           echo "-- 2 -- "
           CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} $GITHUB_SHA)
           echo "-- 3 -- "
