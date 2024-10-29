@@ -28,7 +28,8 @@ jobs:
           echo "-- 3 -- "
           echo "changed_files=$CHANGED_FILES" >> $GITHUB_ENV
           echo "-- 4 -- "
-
+          git diff --help
+          echo "-- 5 -- "
       - name: echo change files
         env: 
           CHANGED_FILES: ${{ env.changed_files }}
